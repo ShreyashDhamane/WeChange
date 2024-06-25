@@ -1,0 +1,123 @@
+.header {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: var(--bg-light);
+    display: flex;
+    place-items: center;
+    min-height: 600px;
+    overflow: hidden;
+
+    .bg-sections {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        pointer-events: none;
+
+        .line {
+            width: calc(100% / 6);
+            height: 100vh;
+            border-right: 3px solid rgba(rgb(160, 199, 160), 0.1);
+        }
+    }
+
+    .header-info {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0px var(--pd-container);
+        margin-top: 20px;
+
+        .left {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            width: 50%;
+
+            .title {
+                font-size: 60px;
+                font-weight: 800;
+
+                .green {
+                    color: var(--color-accent);
+                }
+
+                .words {
+                    min-width: 350px;
+                }
+            }
+
+            .util {
+                margin-top: 40px;
+                display: flex;
+                width: max-content;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+
+                .btn {
+                    background: var(--color-accent);
+                    width: 60px;
+                    height: 60px;
+                    display: grid;
+                    place-items: center;
+                    border-radius: 50%;
+                    box-shadow: 0px 4px 20px #5a84154f;
+                    transition: all 0.25s ease;
+
+                    svg {
+                        font-size: 30px;
+                        color: white;
+                        transform: rotate(90deg);
+                        animation: animate 5s linear infinite;
+
+                        @keyframes animate {
+
+                            0%,
+                            100% {
+                                transform: rotate(90deg);
+                            }
+
+                            50% {
+                                transform: rotate(70deg);
+                            }
+                        }
+                    }
+                }
+
+                .content {
+                    margin-left: 20px;
+                    font-size: 20px;
+                    font-weight: 600;
+                    color: var(--color-accent);
+                }
+
+                &:hover {
+                    .btn {
+                        margin-right: 16px;
+                    }
+                }
+            }
+        }
+
+        .right {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+
+            .image {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                min-width: 400px;
+            }
+        }
+    }
+}
+
+.home-sec {
+    padding: 48px 0px;
+}
